@@ -37,7 +37,7 @@ const printCells = (state) => {
   let ac = "";
   for (let y = topRight[1]; y >= bottomLeft[1]; y--) {
     let row = [];
-    for (let x = bottomLeft[0]; x <= topRight[1]; x++) {
+    for (let x = bottomLeft[0]; x <= topRight[0]; x++) {
       row.push(printCell([x, y], state));
     }
     ac += row.join(" ") + "\n";
