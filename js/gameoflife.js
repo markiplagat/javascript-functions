@@ -70,7 +70,7 @@ const calculateNext = (state) => {
       result = result.concat(willBeAlive([x, y], state) ? [[x, y]] : []);
     }
   }
-    return result;
+  return result;
 };
 
 const iterate = (state, iterations) => {
@@ -81,7 +81,10 @@ const iterate = (state, iterations) => {
     return states;
 };
 
-const main = (pattern, iterations) => {};
+const main = (pattern, iterations) => {
+  const results = iterate(startPatterns[pattern], iterations);
+  results.forEach(r => console.log(printCells(r)));
+};
 
 const startPatterns = {
     rpentomino: [
