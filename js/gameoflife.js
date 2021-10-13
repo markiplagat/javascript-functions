@@ -34,9 +34,9 @@ const corners = (state = []) => {
 
 const printCells = (state) => {
   const { topRight, bottomLeft } = corners(state);
-  const ac = "",
+  let ac = "",
   for (let y = topRight[1]; y >= bottomLeft[1]; y--) {
-    const row = [];
+    let row = [];
     for (let x = bottomLeft[0]; x <= topRight[1]; x++) {
       row.push(printCell([x, y], state));
     }
