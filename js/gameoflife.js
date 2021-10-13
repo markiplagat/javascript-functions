@@ -1,6 +1,10 @@
-function seed() {}
+function seed(a, b, c) {
+  return Array.prototype.slice.call(a, b, c);
+}
 
-function same([x, y], [j, k]) {}
+function same([x, y], [j, k]) {
+  return JSON.stringify([x, y]) === JSON.stringify([j, k]);
+}
 
 // The game state to search for `cell` is passed as the `this` value of the function.
 function contains(cell) {}
