@@ -54,7 +54,13 @@ const getLivingNeighbors = (cell, state) => {
   return getNeighborsOf(cell).filter(c =>contains.bind(state)(c));
 };
 
-const willBeAlive = (cell, state) => {};
+const willBeAlive = (cell, state) => {
+  const living = getLivingNeighbors(cell, state);
+
+  return (
+    living.length === 3 || (contains.call(state, cell) && living.length === 2 )
+  );
+};
 
 const calculateNext = (state) => {};
 
