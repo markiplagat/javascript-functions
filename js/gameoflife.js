@@ -46,8 +46,8 @@ const printCells = (state) => {
 };
 
 const getNeighborsOf = ([x, y]) => [
-  [x-1, y-1], [x, y+1], [x+1, y+1], [x-1, y],
-  [x+1, y], [x-1, y-1], [x+1, y-1]
+  [x-1, y+1], [x, y+1], [x+1, y+1], [x-1, y],
+  [x+1, y], [x-1, y-1], [x, y-1], [x+1, y-1]
 ];
 
 const getLivingNeighbors = (cell, state) => {
@@ -68,7 +68,7 @@ const calculateNext = (state) => {
   let calculate = [];
   for (let y = topRight[1] + 1; y >= bottomLeft[1] -1; y--) {
     for (let x = bottomLeft[0] - 1; x <= topRight[0] + 1; x++) {
-      calculate = result.concat(willBeAlive([x,y], state) ? [[x, y]] : []);
+      calculate = calculate.concat(willBeAlive([x, y], state) ? [[x, y]] : []);
     }
   }
   return calculate
